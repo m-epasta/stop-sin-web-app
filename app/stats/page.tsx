@@ -3,17 +3,17 @@
 import React, { MouseEvent, useState, useEffect, useMemo, ChangeEvent } from "react";
 import "./stats.css";
 
-const StatsPage = () => {
+export const VALID_API_KEYS = [
+    "aks_7f8e3b2c1d9a4f6e5c8b0a9d7e6f5c4b",
+    "aks_a1b2c3d4e5f67890abcdef1234567890",
+    "aks_9876543210fedcba0123456789abcdef"
+];
+export const StatsPage = () => {
     const [apiKey, setApiKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [placeholder, setPlaceholder] = useState("Enter your API key");
 
-    // Your valid API keys array
-    const VALID_API_KEYS = [
-        "aks_7f8e3b2c1d9a4f6e5c8b0a9d7e6f5c4b",
-        "aks_a1b2c3d4e5f67890abcdef1234567890",
-        "aks_9876543210fedcba0123456789abcdef"
-    ];
+
 
     // Memoized validation
     const validation = useMemo(() => {
