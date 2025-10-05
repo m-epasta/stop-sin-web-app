@@ -190,9 +190,3 @@ export const StatsPage = () => {
     );
 };
 
-<<<<<<< HEAD
-
-=======
-export default StatsPage;
-
->>>>>>> 4f23083bb739fb987f1c65bd465fb5bd89734105
