@@ -4,10 +4,11 @@ import React, { MouseEvent, useState, useEffect, useMemo, ChangeEvent } from "re
 import "./stats.css";
 
 export const VALID_API_KEYS = [
-    "aks_7f8e3b2c1d9a4f6e5c8b0a9d7e6f5c4b",
-    "aks_a1b2c3d4e5f67890abcdef1234567890",
-    "aks_9876543210fedcba0123456789abcdef"
+"aks_7f8e3b2c1d9a4f6e5c8b0a9d7e6f5c4b",
+"aks_a1b2c3d4e5f67890abcdef1234567890",
+"aks_9876543210fedcba0123456789abcdef"
 ];
+
 export const StatsPage = () => {
     const [apiKey, setApiKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -189,4 +190,9 @@ export const StatsPage = () => {
     );
 };
 
+<<<<<<< HEAD
+
+=======
 export default StatsPage;
+
+>>>>>>> 4f23083bb739fb987f1c65bd465fb5bd89734105
