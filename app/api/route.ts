@@ -47,7 +47,7 @@ function analyzeAuth(authHeader: string) {
                     accessType: accessType,
                     data: data
                 },
-                { status: 200 } // Don't forget the status
+                { status: 200 }
             );
         } else {
             return NextResponse.json(
