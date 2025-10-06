@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     const authHeader = request.headers.get('authorization') || request.headers.get('Authorization');
     try {
         if (authHeader){
-            // Return the response from analyzeAuth
+            
             return analyzeAuth(authHeader);
         } else {
             return NextResponse.json(
@@ -47,7 +47,7 @@ function analyzeAuth(authHeader: string) {
                     accessType: accessType,
                     data: data
                 },
-                { status: 200 }
+                { status: 200 } 
             );
         } else {
             return NextResponse.json(
