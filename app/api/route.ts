@@ -1,70 +1,77 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { StatsPage, VALID_API_KEYS } from "../stats/page";
-import { makeErroringSearchParamsForUseCache } from 'next/dist/server/request/search-params';
+import { VALID_API_KEYS } from "../stats/page";
 
 const actual_API_keys: string[] = VALID_API_KEYS;
-const [monthlyUsers, dailyUsers, avgUserPerCountry] = actual_API_keys
-
-
+const [monthlyUsers, dailyUsers, avgUserPerCountry] = actual_API_keys.length === 3
+? actual_API_keys
+: ['', '', ''];
 
 export async function GET(request: NextRequest) {
-    var authHeader = request.headers.get('authorization') || request.headers.get('Authorization')
+    const authHeader = request.headers.get('authorization') || request.headers.get('Authorization');
     try {
         if (authHeader){
-            analyzeAuth(request);
+            // Return the response from analyzeAuth
+            return analyzeAuth(authHeader);
         } else {
             return NextResponse.json(
-                { error: "failed to retrieve headers' authentification" },
-                { status: 404 }
+                { error: "Failed to retrieve authorization header" },
+                { status: 401 }
             );
         }
     } catch(error: any) {
         return NextResponse.json(
-            { error: `error ${error?.status}` },
-            { status: error?.status || undefined }
-        )
+            { error: `Error: ${error?.message || 'Unknown error'}` },
+            { status: error?.status || 500 }
+        );
     }
-    
 }
 
-function analyzeAuth(request: NextRequest) {
-    var authHeader = request.headers.get('authorization') || request.headers.get('Authorization');
-    const localAPIkeys: string[] = actual_API_keys;
-    let isAuthValided: boolean | null = false;
+function analyzeAuth(authHeader: string) {
     try {
-        switch (true) {
-            case (authHeader === monthlyUsers):
-                // retrieve monthly users
-                isAuthValided = true;
-                break;
-            case (authHeader === dailyUsers):
-                // retrieve daily users
-                isAuthValided = true;
-                break;
-            case (authHeader === avgUserPerCountry):
-                // retrieve avgUserPerCountry
-                isAuthValided = true;
-                break;
-            default:
-                isAuthValided = false;
-    }
+        if (authHeader === monthlyUsers || authHeader === dailyUsers || authHeader === avgUserPerCountry){
+            let accessType = '';
+
+            if (authHeader === monthlyUsers){
+                accessType = 'monthly';
+            } else if (authHeader === dailyUsers){
+                accessType = 'daily';
+            } else if (authHeader === avgUserPerCountry){
+                accessType = 'country_avg';
+            }
+            
+            const data = runData(authHeader, accessType);
+
+            return NextResponse.json(
+                { 
+                    success: "Authorization successful",
+                    accessType: accessType,
+                    data: data
+                },
+                { status: 200 } // Don't forget the status
+            );
+        } else {
+            return NextResponse.json(
+                { error: "Unauthorized: Invalid API key" }, 
+                { status: 401 }
+            );
+        }
     } catch(error: any) {
         return NextResponse.json(
-            { error: `error: ${error?.message || error}, ${error?.status || 500}` },
-            { status: error.status || 500 }
-        )
-    } finally {
-        if (!isAuthValided) {
-            return NextResponse.json(
-                { error: "Unauthorized: Invalid API key" }/*error there*/, 
-                { status: 401 }
-            )
-        }
+            { error: `Error: ${error?.message || 'Unknown error'}` },
+            { status: error?.status || 500 }
+        );
+    }
+}
 
-        return NextResponse.json(
-            { succes: "Authorization succesful" },
-            { status: 200 }
-        )
-
+function runData(authHeader: string, accessType: string) {
+    switch(accessType) {
+        case 'monthly':
+            return { message: "Monthly user data", users: 1500 };
+        case 'daily':
+            return { message: "Daily user data", users: 50 };
+        case 'country_avg':
+            return { message: "Average users per country", avg: 75 };
+        default:
+            return { message: "Error while retrieving data" };
     }
 }
