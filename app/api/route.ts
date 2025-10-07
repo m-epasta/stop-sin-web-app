@@ -75,3 +75,14 @@ function runData(authHeader: string, accessType: string) {
             return { message: "Error while retrieving data" };
     }
 }
+
+
+async function DELETE(request: NextRequest) {
+    if (!process.env.ADMIN_TOKEN){
+        return NextResponse.json(
+            {error: 'unable to load data'},
+            { status: 404}
+        )
+    }
+    // complete it later
+}
