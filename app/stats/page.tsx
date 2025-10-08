@@ -13,7 +13,8 @@ export const StatsPage = () => {
     const [apiKey, setApiKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [placeholder, setPlaceholder] = useState("Enter your API key");
-    const [error, setError] = useState<string | null>(null); // Added missing error state
+    const [error, setError] = useState<string | null>(null);
+    const [apiData, setApiData] = useState<any>(null);
 
     // Memoized validation
     const validation = useMemo(() => {
@@ -31,7 +32,7 @@ export const StatsPage = () => {
         setPlaceholder(validation.message);
     }, [validation.message]);
 
-    // Smooth scroll for anchor links (First useEffect)
+    // Smooth scroll for anchor links
     useEffect(() => {
         const handleSmoothScroll = (e: Event) => {
             const target = e.target as HTMLAnchorElement;
@@ -47,7 +48,6 @@ export const StatsPage = () => {
             }
         };
 
-        // Add event listeners to all anchor links
         const anchorLinks = document.querySelectorAll('a[href^="#"]');
         anchorLinks.forEach(link => {
             link.addEventListener('click', handleSmoothScroll);
@@ -73,7 +73,8 @@ export const StatsPage = () => {
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setApiKey(e.target.value);
-        setError(null); // Clear error when user starts typing again
+        setError(null);
+        setApiData(null);
     };
 
     const submitButton = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -86,13 +87,13 @@ export const StatsPage = () => {
 
         try {
             setIsLoading(true);
-            setError(null); // Reset any previous errors
+            setError(null);
+            setApiData(null);
             
-            const response = await fetch('/api/route', {
+            const response = await fetch('/api/stats', {
                 method: 'GET',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': apiKey.trim()
+                    'Authorization': `Bearer ${apiKey.trim()}`
                 }
             });
 
@@ -102,18 +103,11 @@ export const StatsPage = () => {
                 throw new Error(data.error || `Request failed with status ${response.status}`);
             }
 
-            // Success case
-            console.log('API Response:', data);
-            // You can set your data state here if you have one
-            // setApiData(data.data);
-            
-            // Show success message
-            alert("API key validated successfully! Data retrieved.");
+            setApiData(data);
             
         } catch (error: any) {
             console.error('API Error:', error);
             setError(error.message);
-            alert(error.message || 'An error occurred while fetching data.');
         } finally {
             setIsLoading(false);
         }
@@ -142,31 +136,26 @@ export const StatsPage = () => {
                     </li>
                 </ul>
             </div>
+            
             <h2 className="subtitle"> Our API's keys to retrieve specific data!</h2>
             <div id="container-specified-api-keys">
                 <ul id="desc-list">
                     <li id="desc-item1" className="feature-card">
                         <h3>Monthly users</h3>
-                        <p>key: {VALID_API_KEYS[0]}</p> {/* Show actual key */}
+                        <p>key: {VALID_API_KEYS[0]}</p>
                     </li>
                     <li id="desc-item2" className="feature-card">
                         <h3>Daily Users</h3>
-                        <p>key: {VALID_API_KEYS[1]}</p> {/* Show actual key */}
+                        <p>key: {VALID_API_KEYS[1]}</p>
                     </li>
                     <li id="desc-item3" className="feature-card">
                         <h3>average user per country</h3>
-                        <p>key: {VALID_API_KEYS[2]}</p> {/* Show actual key */}
+                        <p>key: {VALID_API_KEYS[2]}</p>
                     </li>
                 </ul>
             </div>
             
-            {/* Error display */}
-            {error && (
-                <div className="error-message">
-                    Error: {error}
-                </div>
-            )}
-            
+            {/* API Input Section */}
             <div className="API-input-container">
                 <input 
                     type="text" 
@@ -183,11 +172,36 @@ export const StatsPage = () => {
                 <button 
                     className="API-button" 
                     onClick={submitButton}
-                    disabled={isLoading || validation.isValid !== true} // Fixed condition
+                    disabled={isLoading || validation.isValid !== true}
                 >
                     {isLoading ? "Submitting..." : "Submit"}
                 </button>
             </div>
+
+            {/* Error display */}
+            {error && (
+                <div className="error-message">
+                    Error: {error}
+                </div>
+            )}
+
+            {/* API Data Display */}
+            {apiData && (
+                <div className="api-data-container">
+                    <h2 className="subtitle">API Response</h2>
+                    <div className="data-card">
+                        <pre>{JSON.stringify(apiData, null, 2)}</pre>
+                        {apiData.rateLimit && (
+                            <div className="rate-limit-info">
+                                <p>Remaining requests: {apiData.rateLimit.remaining}</p>
+                                <p>Reset time: {new Date(apiData.rateLimit.resetTime).toLocaleString()}</p>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
+
+export default StatsPage;
