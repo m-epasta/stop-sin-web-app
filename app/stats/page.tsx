@@ -1,13 +1,8 @@
 "use client";
 
-import React, { MouseEvent, useState, useEffect, useMemo, ChangeEvent } from "react";
+import React, { useState, useEffect, useMemo, ChangeEvent } from "react";
+import { VALID_API_KEYS } from '../api/stats/route';
 import "./stats.css";
-
-export const VALID_API_KEYS = [
-  "aks_7f8e3b2c1d9a4f6e5c8b0a9d7e6f5c4b",
-  "aks_a1b2c3d4e5f67890abcdef1234567890",
-  "aks_9876543210fedcba0123456789abcdef"
-];
 
 export const StatsPage = () => {
     const [apiKey, setApiKey] = useState("");
@@ -31,34 +26,6 @@ export const StatsPage = () => {
     useEffect(() => {
         setPlaceholder(validation.message);
     }, [validation.message]);
-
-    // Smooth scroll for anchor links
-    useEffect(() => {
-        const handleSmoothScroll = (e: Event) => {
-            const target = e.target as HTMLAnchorElement;
-            if (target.hash) {
-                e.preventDefault();
-                const targetElement = document.querySelector(target.hash);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        };
-
-        const anchorLinks = document.querySelectorAll('a[href^="#"]');
-        anchorLinks.forEach(link => {
-            link.addEventListener('click', handleSmoothScroll);
-        });
-
-        return () => {
-            anchorLinks.forEach(link => {
-                link.removeEventListener('click', handleSmoothScroll);
-            });
-        };
-    }, []);
 
     useEffect(() => {
         if (validation.isValid === true) {
@@ -114,68 +81,73 @@ export const StatsPage = () => {
     };
 
     return (
-        <div className="appContainer">
+        <div className="app-container">
             <header>
-                <h1 id="title">✝Welcome to AntiSin - The first app to help you be a better Christian on Internet✝</h1>
+                <h1 id="title">AntiSin Analytics</h1>
+                <p className="subtitle">Comprehensive data insights for your spiritual journey</p>
             </header>
-            <h2 className="subtitle">Our official data report!</h2>
-        
-            <div id="desc-div">
-                <ul id="desc-list">
-                    <li id="desc-item1" className="feature-card">
-                        <h3>Daily activity</h3>
-                        <p></p>
-                    </li>
-                    <li id="desc-item2" className="feature-card">
-                        <h3>📈 Progress Analytics</h3>
-                        <p></p>
-                    </li>
-                    <li id="desc-item3" className="feature-card">
-                        <h3>👥 100% transparency</h3>
-                        <p></p>
-                    </li>
-                </ul>
+            
+            <div className="modern-grid">
+                <div className="modern-card">
+                    <div className="card-icon">📊</div>
+                    <h3>Daily Activity</h3>
+                    <p>Monitor your daily spiritual progress and engagement metrics with detailed analytics and insights.</p>
+                </div>
+                <div className="modern-card">
+                    <div className="card-icon">📈</div>
+                    <h3>Progress Analytics</h3>
+                    <p>Track your growth over time with comprehensive progress reports and trend analysis.</p>
+                </div>
+                <div className="modern-card">
+                    <div className="card-icon">👥</div>
+                    <h3>Full Transparency</h3>
+                    <p>Complete visibility into your data with 100% transparency and privacy-focused analytics.</p>
+                </div>
             </div>
             
-            <h2 className="subtitle"> Our API's keys to retrieve specific data!</h2>
-            <div id="container-specified-api-keys">
-                <ul id="desc-list">
-                    <li id="desc-item1" className="feature-card">
-                        <h3>Monthly users</h3>
-                        <p>key: {VALID_API_KEYS[0]}</p>
-                    </li>
-                    <li id="desc-item2" className="feature-card">
+            <div className="api-section">
+                <h2 className="section-title">API Access</h2>
+                <div className="modern-grid">
+                    <div className="modern-card">
+                        <div className="card-icon">👤</div>
+                        <h3>Monthly Users</h3>
+                        <p>Key: <code>{VALID_API_KEYS[0]}</code></p>
+                    </div>
+                    <div className="modern-card">
+                        <div className="card-icon">📅</div>
                         <h3>Daily Users</h3>
-                        <p>key: {VALID_API_KEYS[1]}</p>
-                    </li>
-                    <li id="desc-item3" className="feature-card">
-                        <h3>average user per country</h3>
-                        <p>key: {VALID_API_KEYS[2]}</p>
-                    </li>
-                </ul>
-            </div>
-            
-            {/* API Input Section */}
-            <div className="API-input-container">
-                <input 
-                    type="text" 
-                    placeholder={placeholder}
-                    className={`API-input ${
-                        validation.isValid === false ? 'invalid' : ''} ${
-                        validation.isValid === true ? 'valid' : ''} ${
-                        isLoading ? 'loading' : ''}`
-                    }
-                    value={apiKey}
-                    onChange={handleInputChange}
-                    disabled={isLoading}
-                />
-                <button 
-                    className="API-button" 
-                    onClick={submitButton}
-                    disabled={isLoading || validation.isValid !== true}
-                >
-                    {isLoading ? "Submitting..." : "Submit"}
-                </button>
+                        <p>Key: <code>{VALID_API_KEYS[1]}</code></p>
+                    </div>
+                    <div className="modern-card">
+                        <div className="card-icon">🌍</div>
+                        <h3>Global Analytics</h3>
+                        <p>Key: <code>{VALID_API_KEYS[2]}</code></p>
+                    </div>
+                </div>
+                
+                <div className="modern-input-container">
+                    <div className="input-group">
+                        <input 
+                            type="text" 
+                            placeholder={placeholder}
+                            className={`API-input ${
+                                validation.isValid === false ? 'invalid' : ''} ${
+                                validation.isValid === true ? 'valid' : ''} ${
+                                isLoading ? 'loading' : ''}`
+                            }
+                            value={apiKey}
+                            onChange={handleInputChange}
+                            disabled={isLoading}
+                        />
+                        <button 
+                            className="API-button" 
+                            onClick={submitButton}
+                            disabled={isLoading || validation.isValid !== true}
+                        >
+                            {isLoading ? "Submitting..." : "Get Insights"}
+                        </button>
+                    </div>
+                </div>
             </div>
 
             {/* Error display */}
@@ -187,9 +159,9 @@ export const StatsPage = () => {
 
             {/* API Data Display */}
             {apiData && (
-                <div className="api-data-container">
-                    <h2 className="subtitle">API Response</h2>
-                    <div className="data-card">
+                <div className="results-section">
+                    <h2 className="section-title">Analytics Results</h2>
+                    <div className="data-display">
                         <pre>{JSON.stringify(apiData, null, 2)}</pre>
                         {apiData.rateLimit && (
                             <div className="rate-limit-info">
