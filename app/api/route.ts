@@ -124,7 +124,7 @@ async function DELETE(request: NextRequest) {
     // complete it later
 }
 
-// Rate limiting functions (copied from rateLimit.ts)
+
 function checkRateLimit(apiKey: string): { allowed: boolean; remaining: number; resetTime: Date } {
     const rateLimitConfig = getRateLimitConfig();
     
