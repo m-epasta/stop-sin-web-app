@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, ChangeEvent } from "react";
-import { VALID_API_KEYS } from '../api/stats/route';
-import { getUserSignature } from "../lib/getDesktopName"; // Import the new function
+// Remove this import if it's importing hardcoded values
+// import { VALID_API_KEYS } from '../api/stats/route'; 
+import { getUserSignature } from "../lib/getDesktopName";
 import "./stats.css";
 
 export const StatsPage = () => {
@@ -11,6 +12,13 @@ export const StatsPage = () => {
     const [placeholder, setPlaceholder] = useState("Enter your API key");
     const [error, setError] = useState<string | null>(null);
     const [apiData, setApiData] = useState<any>(null);
+
+    // Memoized API keys from environment variables
+    const VALID_API_KEYS = useMemo(() => [
+        process.env.NEXT_PUBLIC_API_KEY_MONTHLY_USERS,
+        process.env.NEXT_PUBLIC_API_KEY_DAILY_USERS,
+        process.env.NEXT_PUBLIC_API_KEY_COUNTRY_AVG
+    ].filter(Boolean), []);
 
     // Memoized validation
     const validation = useMemo(() => {
@@ -21,29 +29,15 @@ export const StatsPage = () => {
         } else {
             return { isValid: false, message: "✗ Invalid API key" };
         }
-    }, [apiKey]);
+    }, [apiKey, VALID_API_KEYS]); // Add VALID_API_KEYS to dependencies
 
-    // Update placeholder based on validation
-    useEffect(() => {
-        setPlaceholder(validation.message);
-    }, [validation.message]);
-
-    useEffect(() => {
-        if (validation.isValid === true) {
-            const input = document.querySelector('.API-input');
-            input?.classList.add('success-glow');
-            const timer = setTimeout(() => {
-                input?.classList.remove('success-glow');
-            }, 1500);
-            return () => clearTimeout(timer);
-        }
-    }, [validation.isValid]);
-
+    // Rest of your component remains the same...
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setApiKey(e.target.value);
         setError(null);
         setApiData(null);
     };
+
 
     const submitButton = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
