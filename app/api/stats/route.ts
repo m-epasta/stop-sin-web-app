@@ -49,7 +49,6 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Validate API key and return data
     return analyzeAuth(token, rateLimitResult);
     
   } catch (error: any) {
