@@ -20,7 +20,6 @@ export const StatsPage = () => {
         process.env.NEXT_PUBLIC_API_KEY_COUNTRY_AVG
     ].filter(Boolean), []);
 
-    // Memoized validation
     const validation = useMemo(() => {
         if (apiKey.trim() === "") {
             return { isValid: null, message: "Enter your API key." };
