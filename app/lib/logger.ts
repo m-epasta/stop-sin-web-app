@@ -1,4 +1,4 @@
-// lib/logger.ts - Temporary Debugging Configuration
+
 import { createLogger, format, transports } from 'winston';
 import path from 'path';
 
