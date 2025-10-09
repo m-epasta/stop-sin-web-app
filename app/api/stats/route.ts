@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { logger } from '../../lib/logger';
 
+export const dynamic = 'force-dynamic';
 export const VALID_API_KEYS = [
   process.env.API_KEY_MONTHLY_USERS,
   process.env.API_KEY_DAILY_USERS,
@@ -51,7 +53,7 @@ export async function GET(request: NextRequest) {
     return analyzeAuth(token, rateLimitResult);
     
   } catch (error: any) {
-    console.error('API Error:', error);
+    logger.error('API Error:', error);
     return NextResponse.json(
       { error: `Internal server error: ${error.message}` },
       { status: 500 }
@@ -150,13 +152,13 @@ function getRateLimitConfig(): { limit: number; windowMs: number } {
   const envLimit = process.env.RATE_LIMIT;
   
   if (!envLimit) {
-    console.warn('RATE_LIMIT not set, using default limit of 100 requests per minute');
+    logger.error('RATE_LIMIT not set, using default limit of 100 requests per minute');
     return { limit: 100, windowMs: 60000 };
   }
   
   const parsedLimit = parseInt(envLimit, 10);
   if (isNaN(parsedLimit) || parsedLimit <= 0) {
-    console.warn(`Invalid RATE_LIMIT: "${envLimit}", using default`);
+    logger.error(`Invalid RATE_LIMIT: "${envLimit}", using default`);
     return { limit: 100, windowMs: 60000 };
   }
   
