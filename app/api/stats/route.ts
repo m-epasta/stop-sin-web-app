@@ -8,7 +8,6 @@ export const VALID_API_KEYS = [
 
 const [monthlyUsers, dailyUsers, avgUserPerCountry] = VALID_API_KEYS;
 
-// Rate limit storage
 const rateLimitMap = new Map<string, Date[]>();
 
 export async function GET(request: NextRequest) {
