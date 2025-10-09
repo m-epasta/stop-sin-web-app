@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo, ChangeEvent } from "react";
 import { VALID_API_KEYS } from '../api/stats/route';
+import { getUserSignature } from "../lib/getDesktopName"; // Import the new function
 import "./stats.css";
 
 export const StatsPage = () => {
@@ -57,10 +58,13 @@ export const StatsPage = () => {
             setError(null);
             setApiData(null);
             
+            const userSignature = getUserSignature(); // Get the unique signature
+
             const response = await fetch('/api/stats', {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${apiKey.trim()}`
+                    'Authorization': `Bearer ${apiKey.trim()}`,
+                    'X-User-Signature': userSignature // Add signature to headers
                 }
             });
 
@@ -111,17 +115,17 @@ export const StatsPage = () => {
                     <div className="modern-card">
                         <div className="card-icon">👤</div>
                         <h3>Monthly Users</h3>
-                        <p>Key: <code>{VALID_API_KEYS[0]}</code></p>
+                        <p>Key: <code>{process.env.NEXT_PUBLIC_API_KEY_MONTHLY_USERS}</code></p>
                     </div>
                     <div className="modern-card">
                         <div className="card-icon">📅</div>
                         <h3>Daily Users</h3>
-                        <p>Key: <code>{VALID_API_KEYS[1]}</code></p>
+                        <p>Key: <code>{process.env.NEXT_PUBLIC_API_KEY_DAILY_USERS}</code></p>
                     </div>
                     <div className="modern-card">
                         <div className="card-icon">🌍</div>
                         <h3>Global Analytics</h3>
-                        <p>Key: <code>{VALID_API_KEYS[2]}</code></p>
+                        <p>Key: <code>{process.env.NEXT_PUBLIC_API_KEY_COUNTRY_AVG}</code></p>
                     </div>
                 </div>
                 

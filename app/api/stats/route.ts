@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export const VALID_API_KEYS = [
-  "aks_7f8e3b2c1d9a4f6e5c8b0a9d7e6f5c4b",
-  "aks_a1b2c3d4e5f67890abcdef1234567890",
-  "aks_9876543210fedcba0123456789abcdef"
+  process.env.API_KEY_MONTHLY_USERS,
+  process.env.API_KEY_DAILY_USERS,
+  process.env.API_KEY_COUNTRY_AVG
 ];
 
 const [monthlyUsers, dailyUsers, avgUserPerCountry] = VALID_API_KEYS;
@@ -13,22 +13,29 @@ const rateLimitMap = new Map<string, Date[]>();
 
 export async function GET(request: NextRequest) {
   try {
-    const authHeader = request.headers.get('authorization');
-    
-    if (!authHeader) {
+    const Bearer = request.headers.get('authorization');
+    const userSignature = request.headers.get('X-User-Signature');
+    if (!Bearer) {
       return NextResponse.json(
         { error: "Authorization header required" },
         { status: 401 }
       );
     }
 
+    if (!userSignature){
+      return NextResponse.json(
+        { error: "User signature header required" },
+        { status: 401 }
+      );
+    }
+
     // Extract token from "Bearer <token>" format
-    const token = authHeader.startsWith('Bearer ') 
-      ? authHeader.slice(7) 
-      : authHeader;
+    const token = Bearer.startsWith('Bearer ') 
+      ? Bearer.slice(7) 
+      : Bearer;
 
     // Check rate limit
-    const rateLimitResult = checkRateLimit(token);
+    const rateLimitResult = checkRateLimit(userSignature);
     
     if (!rateLimitResult.allowed) {
       return NextResponse.json(
@@ -116,19 +123,19 @@ function runData(token: string, accessType: string) {
   }
 }
 
-// Rate limiting functions
-function checkRateLimit(apiKey: string): { allowed: boolean; remaining: number; resetTime: Date } {
+// make sure to use signature key to sign the API request and make the rate limit not global
+function checkRateLimit(signature: string): { allowed: boolean; remaining: number; resetTime: Date } {
   const rateLimitConfig = getRateLimitConfig();
   const now = new Date();
   const windowStart = new Date(now.getTime() - rateLimitConfig.windowMs);
   
-  const timestamps = rateLimitMap.get(apiKey) || [];
+  const timestamps = rateLimitMap.get(signature) || [];
   const recentRequests = timestamps.filter(time => time > windowStart);
   const allowed = recentRequests.length < rateLimitConfig.limit;
   
   if (allowed) {
     recentRequests.push(now);
-    rateLimitMap.set(apiKey, recentRequests);
+    rateLimitMap.set(signature, recentRequests);
   }
   
   cleanupOldEntries();
@@ -161,12 +168,12 @@ function cleanupOldEntries() {
   const now = new Date();
   const cleanupThreshold = new Date(now.getTime() - 2 * 60000);
   
-  for (const [apiKey, timestamps] of rateLimitMap.entries()) {
+  for (const [signature, timestamps] of rateLimitMap.entries()) {
     const recentTimestamps = timestamps.filter(time => time > cleanupThreshold);
     if (recentTimestamps.length === 0) {
-      rateLimitMap.delete(apiKey);
+      rateLimitMap.delete(signature);
     } else {
-      rateLimitMap.set(apiKey, recentTimestamps);
+      rateLimitMap.set(signature, recentTimestamps);
     }
   }
 }
