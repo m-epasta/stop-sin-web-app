@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { logger } from '../../lib/logger';
+import  { translateJSONWrapper } from '../../lib/textProcessor';
 
 export const dynamic = 'force-dynamic';
 export const VALID_API_KEYS = [
   process.env.NEXT_PUBLIC_API_KEY_MONTHLY_USERS,
   process.env.NEXT_PUBLIC_API_KEY_DAILY_USERS,
-  process.env.API_KEY_COUNTRY_AVG
+  process.env.NEXT_PUBLIC_API_KEY_COUNTRY_AVG
 ];
 export let jsondata: any;
 
@@ -112,26 +113,31 @@ function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaini
   return NextResponse.json(responseData);
 }
 
-function runData(token: string, accessType: string) {
+async function runData(token: string, accessType: string) {
    jsondata = {};
 
   switch(accessType) {
     case 'monthly':
-      return jsondata = { 
+      jsondata = { 
         message: "Monthly user data", 
         users: 1500,
         growth: "+12% from last month",
         period: "January 2024"
       };
+      
+      return await translateJSONWrapper(jsondata, 'en');
+      // the translation is disponible in log: check textProcessor.ts Ln 37
     case 'daily':
-      return jsondata = { 
+      jsondata = { 
         message: "Daily user data", 
         users: 50,
         activeSessions: 127,
         date: new Date().toISOString().split('T')[0]
       };
+      return await translateJSONWrapper(jsondata, 'en');
+
     case 'country_avg':
-      return jsondata = { 
+      jsondata = { 
         message: "Average users per country", 
         average: 75,
         topCountries: [
@@ -140,8 +146,10 @@ function runData(token: string, accessType: string) {
           { country: "Philippines", users: 198 }
         ]
       };
+      return await translateJSONWrapper(jsondata, 'en');
     default:
-      return { message: "Unknown data type" };
+      logger.error(`Invalid access type: ${accessType}`);
+      return { error: "Invalid access type" };
   }
 }
 

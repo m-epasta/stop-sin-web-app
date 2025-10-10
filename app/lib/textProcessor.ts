@@ -1,5 +1,4 @@
 import { translate } from 'google-translate-api-x';
-import { jsondata } from '../api/stats/route';
 import { logger } from './logger';
 
 interface TranslationResult {
@@ -29,10 +28,17 @@ const translateJSON = async <T extends Record<string, any>>(
 };
 
 
+export async function translateJSONWrapper(
+  jsondata: Record<string, any>, 
+  targetLang: string | 'en'
+): Promise<Record<string, any>> {
+  try {
+    const translatedObj = await translateJSON(jsondata, targetLang);
+    logger.info(translatedObj);
+    return translatedObj;
+  } catch (err: any) {
+    logger.error(`Translation to ${targetLang} failed:`, err);
+    throw err;
+  }
+}
 
-translateJSON(jsondata, 'en-US')
-  .then(translatedObj => {
-    logger.log(translatedObj);
-    
-  })
-  .catch((err: Error) => console.error(err));

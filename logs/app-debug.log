@@ -59,3 +59,125 @@
 {"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T09:34:09.037Z"}
 {"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:35:09 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:34:09.038Z"}
 {"level":"info","message":"Access type: country_avg","timestamp":"2025-10-10T09:34:09.038Z"}
+{"level":"debug","message":"Debug level test - working as expeected","timestamp":"2025-10-10T12:38:14.699Z"}
+{"level":"info","message":"Info level test - working as expeected","timestamp":"2025-10-10T12:38:14.701Z"}
+{"level":"warn","message":"Warn level test - working as expeected","timestamp":"2025-10-10T12:38:14.702Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T12:38:14.702Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T12:38:14.703Z"}
+{"level":"warn","message":"[2/3] retrieved, [1/3] not found at indices: [2]","timestamp":"2025-10-10T12:38:14.710Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T12:38:14.731Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 14:39:14 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T12:38:14.731Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T12:38:14.732Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T12:38:15.030Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T12:56:08.910Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 14:57:08 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T12:56:08.912Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T12:56:08.912Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T12:56:09.160Z","users":1500}
+{"level":"debug","message":"Debug level test - working as expeected","timestamp":"2025-10-10T13:00:02.472Z"}
+{"level":"info","message":"Info level test - working as expeected","timestamp":"2025-10-10T13:00:02.474Z"}
+{"level":"warn","message":"Warn level test - working as expeected","timestamp":"2025-10-10T13:00:02.475Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T13:00:02.476Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T13:00:02.476Z"}
+{"level":"warn","message":"[2/3] retrieved, [1/3] not found at indices: [2]","timestamp":"2025-10-10T13:00:02.478Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:02.496Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 15:01:02 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:02.496Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:02.497Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:02.773Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:22.228Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 8, resetTime: Fri Oct 10 2025 15:01:22 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:22.229Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:22.229Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:22.500Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:23.945Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 7, resetTime: Fri Oct 10 2025 15:01:23 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:23.946Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:23.947Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:24.162Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:24.873Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 6, resetTime: Fri Oct 10 2025 15:01:24 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:24.874Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:24.874Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:25.079Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:26.135Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 5, resetTime: Fri Oct 10 2025 15:01:26 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:26.136Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:26.136Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:26.336Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:26.916Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 4, resetTime: Fri Oct 10 2025 15:01:26 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:26.917Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:26.917Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:27.202Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:27.511Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 3, resetTime: Fri Oct 10 2025 15:01:27 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:27.512Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:27.512Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:27.724Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:28.124Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 2, resetTime: Fri Oct 10 2025 15:01:28 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:28.125Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:28.125Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:28.422Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:28.819Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 1, resetTime: Fri Oct 10 2025 15:01:28 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:28.820Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:28.820Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:29.018Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:29.438Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 0, resetTime: Fri Oct 10 2025 15:01:29 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:29.439Z"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-10T13:00:29.439Z"}
+{"growth":"+12% from last month","level":"info","message":"Monthly user data","period":"January 2024","timestamp":"2025-10-10T13:00:29.764Z","users":1500}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:00:30.380Z"}
+{"level":"info","message":"Rate limit status: false, remaining: 0, resetTime: Fri Oct 10 2025 15:01:30 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:00:30.380Z"}
+{"level":"warn","message":"Rate limit exceeded. User: cacecec8-9efc-4089-bd4f-648a5a6adbdb","timestamp":"2025-10-10T13:00:30.381Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:03.712Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 15:04:03 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:03.713Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:03.713Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:03.920Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:29.715Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 8, resetTime: Fri Oct 10 2025 15:04:29 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:29.716Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:29.717Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:29.874Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:36.759Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 7, resetTime: Fri Oct 10 2025 15:04:36 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:36.760Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:36.760Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:36.955Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:39.688Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 6, resetTime: Fri Oct 10 2025 15:04:39 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:39.688Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:39.689Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:39.765Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:40.570Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 5, resetTime: Fri Oct 10 2025 15:04:40 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:40.570Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:40.571Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:40.728Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:41.137Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 4, resetTime: Fri Oct 10 2025 15:04:41 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:41.138Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:41.138Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:41.302Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:41.736Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 3, resetTime: Fri Oct 10 2025 15:04:41 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:41.737Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:41.737Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:41.845Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:42.340Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 2, resetTime: Fri Oct 10 2025 15:04:42 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:42.341Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:42.341Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:42.479Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:43.145Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 1, resetTime: Fri Oct 10 2025 15:04:43 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:43.145Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:43.146Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:43.257Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:43.787Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 0, resetTime: Fri Oct 10 2025 15:04:43 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:43.788Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:03:43.788Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:03:43.901Z","users":50}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:44.884Z"}
+{"level":"info","message":"Rate limit status: false, remaining: 0, resetTime: Fri Oct 10 2025 15:04:44 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:44.885Z"}
+{"level":"warn","message":"Rate limit exceeded. User: cacecec8-9efc-4089-bd4f-648a5a6adbdb","timestamp":"2025-10-10T13:03:44.885Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:03:50.700Z"}
+{"level":"info","message":"Rate limit status: false, remaining: 0, resetTime: Fri Oct 10 2025 15:04:50 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:03:50.701Z"}
+{"level":"warn","message":"Rate limit exceeded. User: cacecec8-9efc-4089-bd4f-648a5a6adbdb","timestamp":"2025-10-10T13:03:50.701Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:04:01.148Z"}
+{"level":"info","message":"Rate limit status: false, remaining: 0, resetTime: Fri Oct 10 2025 15:05:01 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:04:01.149Z"}
+{"level":"warn","message":"Rate limit exceeded. User: cacecec8-9efc-4089-bd4f-648a5a6adbdb","timestamp":"2025-10-10T13:04:01.149Z"}
+{"level":"debug","message":"Debug level test - working as expeected","timestamp":"2025-10-10T13:23:54.264Z"}
+{"level":"info","message":"Info level test - working as expeected","timestamp":"2025-10-10T13:23:54.266Z"}
+{"level":"warn","message":"Warn level test - working as expeected","timestamp":"2025-10-10T13:23:54.267Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T13:23:54.267Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T13:23:54.268Z"}
+{"level":"warn","message":"[2/3] retrieved, [1/3] not found at indices: [2]","timestamp":"2025-10-10T13:23:54.270Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T13:23:54.288Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 15:24:54 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T13:23:54.289Z"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10T13:23:54.289Z"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10T13:23:54.445Z","users":50}

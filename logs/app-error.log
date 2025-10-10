@@ -8,3 +8,6 @@
 {"level":"error","message":"Invalid API key: false  (aks_9876543210fedcba0123456789abcdef)","timestamp":"2025-10-10T09:22:54.852Z"}
 {"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:25:05.729Z"}
 {"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T09:26:20.743Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T12:38:14.702Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T13:00:02.476Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T13:23:54.267Z"}
