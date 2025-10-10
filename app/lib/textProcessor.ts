@@ -19,7 +19,6 @@ const translateJSON = async <T extends Record<string, any>>(
         translated[key as keyof T] = translationResult.text as T[keyof T];
       } catch (error) {
         console.error(`Failed to translate key "${key}":`, error);
-        // Keep original value on error
       }
     }
   }
