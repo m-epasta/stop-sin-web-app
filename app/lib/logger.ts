@@ -2,7 +2,7 @@ import * as winston from 'winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
 import path from 'path';
 
-// Create a log directory path
+
 const logDir = path.join(process.cwd(), 'logs');
 
 const { combine, timestamp, errors, json, printf, colorize, cli } = winston.format;
