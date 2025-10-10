@@ -3,12 +3,11 @@ import path from 'path';
 
 const { combine, timestamp, errors, json, printf, colorize } = format;
 
-// Custom format for console output
 const consoleFormat = printf(({ level, message, timestamp, stack }) => {
   return `[${timestamp}] ${level}: ${stack || message}`;
 });
 
-// Create absolute paths for different log levels
+// Create absolute paths for all the log levels
 const infoLogPath = path.join(process.cwd(), 'logs/app-info.log');
 const warnLogPath = path.join(process.cwd(), 'logs/app-warn.log');
 const errorLogPath = path.join(process.cwd(), 'logs/app-error.log');
