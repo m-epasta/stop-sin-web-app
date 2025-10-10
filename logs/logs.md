@@ -18,9 +18,9 @@ It's a json file (like a hashmap) so every data is passed like:
 ``` JSON
 { <- curly braces that open a dictionnary/hashmap or just a JSON data container 
     key: value,
-}
+}```
  - the key is the given name of the value so it can be like
-{
+``` JSON{
     country: france
 }
 ```
