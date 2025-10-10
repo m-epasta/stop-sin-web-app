@@ -1,0 +1,5 @@
+export const VALID_API_KEYS = [
+  process.env.NEXT_PUBLIC_API_KEY_MONTHLY_USERS,
+  process.env.NEXT_PUBLIC_API_KEY_DAILY_USERS,
+  process.env.NEXT_PUBLIC_API_KEY_COUNTRY_AVG
+];

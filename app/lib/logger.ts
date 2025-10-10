@@ -5,7 +5,7 @@ import path from 'path';
 
 const logDir = path.join(process.cwd(), 'logs');
 
-const { combine, timestamp, errors, json, printf, colorize, cli } = winston.format;
+const { combine, timestamp, errors, json, printf, colorize } = winston.format;
 
 // Custom format for console (non-JSON, colored)
 const consoleFormat = printf(({ level, message, timestamp, stack }) => {

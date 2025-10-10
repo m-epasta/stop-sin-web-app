@@ -3,3 +3,8 @@
 {"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 16:23:44 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10 16:22:44"}
 {"level":"info","message":"Access type: daily","timestamp":"2025-10-10 16:22:44"}
 {"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10 16:22:45","users":50}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-10 18:31:06"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10 18:31:06"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 18:32:06 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10 18:31:06"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10 18:31:06"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10 18:31:06","users":50}

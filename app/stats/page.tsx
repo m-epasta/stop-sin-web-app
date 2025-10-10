@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useMemo, ChangeEvent } from "react";
 import { getUserSignature } from "../lib/getDesktopName";
+import { translateData } from '../actions/translate';
 import "./stats.css";
 
-export const StatsPage = () => {
+export default function StatsPage() {
     const [apiKey, setApiKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [placeholder, setPlaceholder] = useState("Enter your API key");
@@ -65,7 +66,7 @@ export const StatsPage = () => {
                 throw new Error(data.error || `Request failed with status ${response.status}`);
             }
 
-            setApiData(data);
+            setApiData(translateData(data, 'en')); // Translate the JSON data to English
             
         } catch (error: any) {
             console.error('API Error:', error);
@@ -171,4 +172,3 @@ export const StatsPage = () => {
     );
 };
 
-export default StatsPage;

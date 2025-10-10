@@ -1,37 +1,66 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { logger } from '../../lib/logger';
-import  { translateJSONWrapper } from '../../lib/textProcessor';
+import { translateJSONWrapper } from '../../lib/textProcessor.servor';
+import { VALID_API_KEYS } from '../../lib/constants';
 
 export const dynamic = 'force-dynamic';
-export const VALID_API_KEYS = [
-  process.env.NEXT_PUBLIC_API_KEY_MONTHLY_USERS,
-  process.env.NEXT_PUBLIC_API_KEY_DAILY_USERS,
-  process.env.NEXT_PUBLIC_API_KEY_COUNTRY_AVG
-];
-export let jsondata: any;
 
-const totalKeys = VALID_API_KEYS.length;
-const missingIndices = VALID_API_KEYS
-  .map((key, index) => !key || key.trim() === '' ? index : -1)
-  .filter(index => index !== -1); 
+// Move rate limit map inside the module scope (not exported)
+const rateLimitMap = new Map<string, Date[]>();
 
-const retrievedCount = totalKeys - missingIndices.length;
+// Initialize API keys validation - moved inside a function
+function initializeApiKeys() {
+  const totalKeys = VALID_API_KEYS.length;
+  const missingIndices = VALID_API_KEYS
+    .map((key, index) => !key || key.trim() === '' ? index : -1)
+    .filter(index => index !== -1); 
 
-if (missingIndices.length > 0) {
+  const retrievedCount = totalKeys - missingIndices.length;
+
+  if (missingIndices.length > 0) {
     logger.warn(`[${retrievedCount}/${totalKeys}] retrieved, [${missingIndices.length}/${totalKeys}] not found at indices: [${missingIndices.join(', ')}]`);
-} else {
+  } else {
     logger.info(`[${retrievedCount}/${totalKeys}] retrieved: All API keys loaded successfully`);
+  }
 }
 
-const [monthlyUsers, dailyUsers, avgUserPerCountry] = VALID_API_KEYS;
-
-const rateLimitMap = new Map<string, Date[]>();
+// Data templates to avoid recreating objects
+const dataTemplates = {
+  monthly: () => ({ 
+    message: "Monthly user data", 
+    users: 1500,
+    growth: "+12% from last month",
+    period: "January 2024"
+  }),
+  daily: () => ({ 
+    message: "Daily user data", 
+    users: 50,
+    activeSessions: 127,
+    date: new Date().toISOString().split('T')[0]
+  }),
+  country_avg: () => ({ 
+    message: "Average users per country", 
+    average: 75,
+    topCountries: [
+      { country: "United States", users: 320 },
+      { country: "Brazil", users: 285 },
+      { country: "Philippines", users: 198 }
+    ]
+  })
+};
 
 export async function GET(request: NextRequest) {
   try {
+    // Initialize API keys on first request
+    if (rateLimitMap.size === 0) {
+      initializeApiKeys();
+    }
+
     const Bearer = request.headers.get('authorization');
     const userSignature = request.headers.get('X-User-Signature');
-    logger.info(`Authorization: ${Bearer? true : false}, User Signature: ${userSignature? true : false}`);
+    
+    logger.info(`Authorization: ${Bearer ? true : false}, User Signature: ${userSignature ? true : false}`);
+    
     if (!Bearer) {
       logger.error('Missing authorization header');
       return NextResponse.json(
@@ -40,7 +69,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    if (!userSignature){
+    if (!userSignature) {
       logger.error('Missing user signature header');
       return NextResponse.json(
         { error: "User signature header required" },
@@ -69,7 +98,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    return analyzeAuth(token, rateLimitResult);
+    return await analyzeAuth(token, rateLimitResult);
     
   } catch (error: any) {
     logger.error('API Error:', error);
@@ -80,7 +109,8 @@ export async function GET(request: NextRequest) {
   }
 }
 
-function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaining: number; resetTime: Date }) {
+async function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaining: number; resetTime: Date }) {
+  const [monthlyUsers, dailyUsers, avgUserPerCountry] = VALID_API_KEYS;
   let accessType = '';
   
   if (token === monthlyUsers) {
@@ -90,14 +120,15 @@ function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaini
   } else if (token === avgUserPerCountry) {
     accessType = 'country_avg';
   } else {
-    logger.error(`Invalid API key: ${token in VALID_API_KEYS? true : false}  (${token})`);
+    logger.error(`Invalid API key: ${VALID_API_KEYS.includes(token)} (${token})`);
     return NextResponse.json(
       { error: "Invalid API key" },
       { status: 401 }
     );
-  } logger.info(`Access type: ${accessType}`);
-
-  const data = runData(token, accessType);
+  }
+  
+  logger.info(`Access type: ${accessType}`);
+  const data = await runData(accessType);
 
   const responseData = { 
     success: true,
@@ -113,47 +144,18 @@ function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaini
   return NextResponse.json(responseData);
 }
 
-async function runData(token: string, accessType: string) {
-   jsondata = {};
-
-  switch(accessType) {
-    case 'monthly':
-      jsondata = { 
-        message: "Monthly user data", 
-        users: 1500,
-        growth: "+12% from last month",
-        period: "January 2024"
-      };
-      
-      return await translateJSONWrapper(jsondata, 'en');
-      // the translation is disponible in log: check textProcessor.ts Ln 37
-    case 'daily':
-      jsondata = { 
-        message: "Daily user data", 
-        users: 50,
-        activeSessions: 127,
-        date: new Date().toISOString().split('T')[0]
-      };
-      return await translateJSONWrapper(jsondata, 'en');
-
-    case 'country_avg':
-      jsondata = { 
-        message: "Average users per country", 
-        average: 75,
-        topCountries: [
-          { country: "United States", users: 320 },
-          { country: "Brazil", users: 285 },
-          { country: "Philippines", users: 198 }
-        ]
-      };
-      return await translateJSONWrapper(jsondata, 'en');
-    default:
-      logger.error(`Invalid access type: ${accessType}`);
-      return { error: "Invalid access type" };
+async function runData(accessType: string) {
+  const template = dataTemplates[accessType as keyof typeof dataTemplates];
+  
+  if (!template) {
+    logger.error(`Invalid access type: ${accessType}`);
+    return { error: "Invalid access type" };
   }
+
+  const jsondata = template();
+  return await translateJSONWrapper(jsondata, 'en');
 }
 
-// make sure to use signature key to sign the API request and make the rate limit not global
 function checkRateLimit(signature: string): { allowed: boolean; remaining: number; resetTime: Date } {
   const rateLimitConfig = getRateLimitConfig();
   const now = new Date();
