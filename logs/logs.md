@@ -15,7 +15,7 @@ to avoid making you read code from deepseek, i will do something by myself once.
 # structure
 
 It's a json file (like a hashmap) so every data is passed like:
-``` JSON
+``` JSON
 { <- curly braces that open a dictionnary/hashmap or just a JSON data container 
     key: value,
 }```
