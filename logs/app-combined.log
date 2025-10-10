@@ -1,0 +1,54 @@
+{"level":"info","message":"Info level test - general application flow","timestamp":"2025-10-10T09:04:46.205Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:04:46.206Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:04:46.206Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T09:04:46.207Z"}
+{"level":"info","message":"Authorization: Bearer aks_7f8e3b2c1d9a4f6e5c8b0a9d7e6f5c4b, User Signature: cacecec8-9efc-4089-bd4f-648a5a6adbdb","timestamp":"2025-10-10T09:04:46.223Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:05:46 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:04:46.223Z"}
+{"level":"info","message":"Info level test - general application flow","timestamp":"2025-10-10T09:05:24.918Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:05:24.919Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:05:24.919Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T09:05:24.920Z"}
+{"level":"info","message":"Authorization: Bearer aks_9876543210fedcba0123456789abcdef, User Signature: cacecec8-9efc-4089-bd4f-648a5a6adbdb","timestamp":"2025-10-10T09:05:24.939Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:06:24 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:05:24.940Z"}
+{"level":"info","message":"Info level test - general application flow","timestamp":"2025-10-10T09:14:35.393Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:14:35.394Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:14:35.394Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T09:14:35.395Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T09:14:35.405Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:15:35 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:14:35.414Z"}
+{"level":"error","message":"Invalid API key: false  (aks_9876543210fedcba0123456789abcdef)","timestamp":"2025-10-10T09:14:35.415Z"}
+{"level":"info","message":"Info level test - general application flow","timestamp":"2025-10-10T09:19:58.954Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:19:58.955Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:19:58.955Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T09:19:58.956Z"}
+{"level":"warn","message":"[0/3] retrieved, [3/3] not found","timestamp":"2025-10-10T09:19:58.956Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T09:19:58.982Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:20:58 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:19:58.983Z"}
+{"level":"error","message":"Invalid API key: false  (aks_9876543210fedcba0123456789abcdef)","timestamp":"2025-10-10T09:19:58.984Z"}
+{"level":"info","message":"Info level test - general application flow","timestamp":"2025-10-10T09:22:54.840Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:22:54.841Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:22:54.842Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T09:22:54.842Z"}
+{"level":"warn","message":"[0/3] retrieved, [3/3] not found at indices: [0, 1, 2]","timestamp":"2025-10-10T09:22:54.843Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T09:22:54.851Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:23:54 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:22:54.852Z"}
+{"level":"error","message":"Invalid API key: false  (aks_9876543210fedcba0123456789abcdef)","timestamp":"2025-10-10T09:22:54.852Z"}
+{"level":"info","message":"Info level test - general application flow","timestamp":"2025-10-10T09:25:05.728Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:25:05.728Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:25:05.729Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T09:25:05.729Z"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-10T09:25:05.730Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T09:25:05.739Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:26:05 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:25:05.739Z"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-10T09:25:05.740Z"}
+{"level":"info","message":"Info level test - working as expeected","timestamp":"2025-10-10T09:26:20.741Z"}
+{"level":"warn","message":"Warn level test - working as expeected","timestamp":"2025-10-10T09:26:20.742Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T09:26:20.743Z"}
+{"level":"info","message":"Log files initialized at: /home/m-epasta/StopSinDir/stop-sin-web-app/logs","timestamp":"2025-10-10T09:26:20.743Z"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-10T09:26:20.744Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T09:26:20.755Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:27:20 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:26:20.755Z"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-10T09:26:20.756Z"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10T09:34:09.037Z"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 11:35:09 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10T09:34:09.038Z"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-10T09:34:09.038Z"}

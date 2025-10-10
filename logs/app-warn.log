@@ -1,0 +1,19 @@
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:04:46.206Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:04:46.206Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:05:24.919Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:05:24.919Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:14:35.394Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:14:35.394Z"}
+{"level":"error","message":"Invalid API key: false  (aks_9876543210fedcba0123456789abcdef)","timestamp":"2025-10-10T09:14:35.415Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:19:58.955Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:19:58.955Z"}
+{"level":"warn","message":"[0/3] retrieved, [3/3] not found","timestamp":"2025-10-10T09:19:58.956Z"}
+{"level":"error","message":"Invalid API key: false  (aks_9876543210fedcba0123456789abcdef)","timestamp":"2025-10-10T09:19:58.984Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:22:54.841Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:22:54.842Z"}
+{"level":"warn","message":"[0/3] retrieved, [3/3] not found at indices: [0, 1, 2]","timestamp":"2025-10-10T09:22:54.843Z"}
+{"level":"error","message":"Invalid API key: false  (aks_9876543210fedcba0123456789abcdef)","timestamp":"2025-10-10T09:22:54.852Z"}
+{"level":"warn","message":"Warn level test - something unusual happened","timestamp":"2025-10-10T09:25:05.728Z"}
+{"level":"error","message":"Error level test - an error occurred","timestamp":"2025-10-10T09:25:05.729Z"}
+{"level":"warn","message":"Warn level test - working as expeected","timestamp":"2025-10-10T09:26:20.742Z"}
+{"level":"error","message":"Error level test - working as expeected","timestamp":"2025-10-10T09:26:20.743Z"}

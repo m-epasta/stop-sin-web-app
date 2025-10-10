@@ -3,10 +3,23 @@ import { logger } from '../../lib/logger';
 
 export const dynamic = 'force-dynamic';
 export const VALID_API_KEYS = [
-  process.env.API_KEY_MONTHLY_USERS,
-  process.env.API_KEY_DAILY_USERS,
+  process.env.NEXT_PUBLIC_API_KEY_MONTHLY_USERS,
+  process.env.NEXT_PUBLIC_API_KEY_DAILY_USERS,
   process.env.API_KEY_COUNTRY_AVG
 ];
+
+const totalKeys = VALID_API_KEYS.length;
+const missingIndices = VALID_API_KEYS
+  .map((key, index) => !key || key.trim() === '' ? index : -1)
+  .filter(index => index !== -1);
+
+const retrievedCount = totalKeys - missingIndices.length;
+
+if (missingIndices.length > 0) {
+    logger.warn(`[${retrievedCount}/${totalKeys}] retrieved, [${missingIndices.length}/${totalKeys}] not found at indices: [${missingIndices.join(', ')}]`);
+} else {
+    logger.info(`[${retrievedCount}/${totalKeys}] retrieved: All API keys loaded successfully`);
+}
 
 const [monthlyUsers, dailyUsers, avgUserPerCountry] = VALID_API_KEYS;
 
@@ -16,7 +29,9 @@ export async function GET(request: NextRequest) {
   try {
     const Bearer = request.headers.get('authorization');
     const userSignature = request.headers.get('X-User-Signature');
+    logger.info(`Authorization: ${Bearer? true : false}, User Signature: ${userSignature? true : false}`);
     if (!Bearer) {
+      logger.error('Missing authorization header');
       return NextResponse.json(
         { error: "Authorization header required" },
         { status: 401 }
@@ -24,6 +39,7 @@ export async function GET(request: NextRequest) {
     }
 
     if (!userSignature){
+      logger.error('Missing user signature header');
       return NextResponse.json(
         { error: "User signature header required" },
         { status: 401 }
@@ -37,8 +53,10 @@ export async function GET(request: NextRequest) {
 
     // Check rate limit
     const rateLimitResult = checkRateLimit(userSignature);
+    logger.info(`Rate limit status: ${rateLimitResult.allowed}, remaining: ${rateLimitResult.remaining}, resetTime: ${rateLimitResult.resetTime}`);
     
     if (!rateLimitResult.allowed) {
+      logger.warn(`Rate limit exceeded. User: ${userSignature}`);
       return NextResponse.json(
         { 
           error: "Rate limit exceeded",
@@ -63,6 +81,7 @@ export async function GET(request: NextRequest) {
 function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaining: number; resetTime: Date }) {
   let accessType = '';
   
+  
   if (token === monthlyUsers) {
     accessType = 'monthly';
   } else if (token === dailyUsers) {
@@ -70,11 +89,12 @@ function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaini
   } else if (token === avgUserPerCountry) {
     accessType = 'country_avg';
   } else {
+    logger.error(`Invalid API key: ${token in VALID_API_KEYS? true : false}  (${token})`);
     return NextResponse.json(
       { error: "Invalid API key" },
       { status: 401 }
     );
-  }
+  } logger.info(`Access type: ${accessType}`);
 
   const data = runData(token, accessType);
 
