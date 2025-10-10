@@ -19,8 +19,11 @@ It's a json file (like a hashmap) so every data is passed like:
 { <- curly braces that open a dictionnary/hashmap or just a JSON data container 
     key: value,
 }```
+
  - the key is the given name of the value so it can be like
-``` JSON{
+
+``` JSON
+{
     country: france
 }
 ```
@@ -52,7 +55,7 @@ its mainly used to debug and/or to see what and where the error is or the except
 As i evaluate you not being that stupid i guess that by reading the value and the name of timestamp,
 i shouldn't explain what does it do.
 
-# important
+# important
 
 i putted(is it english?) a rate limit.I DO NOT put my database code in the repo because i estimate that regardless of the data that will be sent there,
 it would be a bad idea because it could helps bad people to somehow know from who this data came.Even though i didnt written the' database and the mobile app yet, im not gonna risk by marking the database.I will explain my database structure later in this file.
