@@ -1,46 +1,48 @@
-## explanation
+## LOG sytem
 
-using logs
+[stop-sin-web-app/simple-debug.log](simple-debug.log): retrieves you to logs file (useless).
 
+[stop-sin-web-app/logs](logs): logs file.There's all the console status who's written in [stop-sin-web-app/app/lib/logger.ts](app/lib/logger.ts).
 
-[stop-sin-web-app/simple-debug.log]: retrieves you to logs file (useless)
+to avoid making you read code from deepseek, i will do something by myself once.
 
-[stop-sin-web-app/logs]: logs file.There's all the console status who's written in [stop-sin-web-app/app/lib/logger.ts]
-
-to avoid making you read code from deepseek, i will do something by myself once
-
-structure of logs:
+ ### structure of logs:
 (Example of a log)
+``` typescript
 {"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-10 16:22:44"}
+```
 
 # structure
 
-It's a json file (like a hashmap) so every data is passed liek:
+It's a json file (like a hashmap) so every data is passed like:
+``` JSON
 { <- curly braces that open a dictionnary/hashmap or just a JSON data container 
     key: value,
 }
-the key is the given name of the value so it can be like
+ - the key is the given name of the value so it can be like
 {
     country: france
 }
-
+```
 
 # level
 
-tell the level of the message.In this app it can be info, warn, error, debug
-in this example its {"level":"info",} info: key=level  value=info
+ - tell the level of the message.In this app it can be info, warn, error, debug.
+In this example it's ```JSON {"level":"info",}``` info: key=level  value=info
 
 # message
 
 message sent by the API: pasted into logs 
 
 (example with code snppet):
+``` typescript
       logger.error('Missing authorization header');
       return NextResponse.json(
         { error: "Authorization header required" },
         { status: 401 }
       )
-here we can see that the console status: (logger.error with error as the level) indicates the error that the API sent in response to the request
+```
+ - here we can see that the console status: (logger.error with error as the level) indicates the error that the API sent in response to the request
 the difference is that the response is given to the guy who sent the request so here, the user
 but the log is directly sent in a file that i will commit every day to have a green dot))).
 its mainly used to debug and/or to see what and where the error is or the exception that happened(warn).
