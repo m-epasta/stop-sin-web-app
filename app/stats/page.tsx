@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, ChangeEvent } from "react";
-// Remove this import if it's importing hardcoded values
-// import { VALID_API_KEYS } from '../api/stats/route'; 
 import { getUserSignature } from "../lib/getDesktopName";
 import "./stats.css";
 
