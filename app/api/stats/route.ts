@@ -7,11 +7,12 @@ export const VALID_API_KEYS = [
   process.env.NEXT_PUBLIC_API_KEY_DAILY_USERS,
   process.env.API_KEY_COUNTRY_AVG
 ];
+export let jsondata: any;
 
 const totalKeys = VALID_API_KEYS.length;
 const missingIndices = VALID_API_KEYS
   .map((key, index) => !key || key.trim() === '' ? index : -1)
-  .filter(index => index !== -1);
+  .filter(index => index !== -1); 
 
 const retrievedCount = totalKeys - missingIndices.length;
 
@@ -81,7 +82,6 @@ export async function GET(request: NextRequest) {
 function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaining: number; resetTime: Date }) {
   let accessType = '';
   
-  
   if (token === monthlyUsers) {
     accessType = 'monthly';
   } else if (token === dailyUsers) {
@@ -113,23 +113,25 @@ function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; remaini
 }
 
 function runData(token: string, accessType: string) {
+   jsondata = {};
+
   switch(accessType) {
     case 'monthly':
-      return { 
+      return jsondata = { 
         message: "Monthly user data", 
         users: 1500,
         growth: "+12% from last month",
         period: "January 2024"
       };
     case 'daily':
-      return { 
+      return jsondata = { 
         message: "Daily user data", 
         users: 50,
         activeSessions: 127,
         date: new Date().toISOString().split('T')[0]
       };
     case 'country_avg':
-      return { 
+      return jsondata = { 
         message: "Average users per country", 
         average: 75,
         topCountries: [

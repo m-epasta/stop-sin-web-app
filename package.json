@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "google-translate-api-x": "^10.7.2",
     "next": "15.5.4",
     "pnpm": "^10.18.1",
     "react": "19.1.0",
@@ -18,12 +19,12 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@types/node": "^20.19.20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/uuid": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
