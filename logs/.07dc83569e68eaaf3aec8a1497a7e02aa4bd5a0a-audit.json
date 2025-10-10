@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/home/m-epasta/StopSinDir/stop-sin-web-app/logs/.07dc83569e68eaaf3aec8a1497a7e02aa4bd5a0a-audit.json",
+    "files": [
+        {
+            "date": 1760106164964,
+            "name": "/home/m-epasta/StopSinDir/stop-sin-web-app/logs/error-2025-10-10.log",
+            "hash": "5a23222005b806f94fd16513ade1e15a1ef6c4b734a3fc53e1370f11a5dee564"
+        }
+    ],
+    "hashType": "sha256"
+}

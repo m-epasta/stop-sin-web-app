@@ -1,94 +1,67 @@
-import { createLogger, format, transports } from 'winston';
+import * as winston from 'winston';
+import DailyRotateFile from 'winston-daily-rotate-file';
 import path from 'path';
 
-const { combine, timestamp, errors, json, printf, colorize } = format;
+// Create a log directory path
+const logDir = path.join(process.cwd(), 'logs');
 
+const { combine, timestamp, errors, json, printf, colorize, cli } = winston.format;
+
+// Custom format for console (non-JSON, colored)
 const consoleFormat = printf(({ level, message, timestamp, stack }) => {
   return `[${timestamp}] ${level}: ${stack || message}`;
 });
 
-// Create absolute paths for all the log levels
-const infoLogPath = path.join(process.cwd(), 'logs/app-info.log');
-const warnLogPath = path.join(process.cwd(), 'logs/app-warn.log');
-const errorLogPath = path.join(process.cwd(), 'logs/app-error.log');
-const combinedLogPath = path.join(process.cwd(), 'logs/app-combined.log');
-const debugLogPath = path.join(process.cwd(), 'logs/app-debug.log');
-
-export const logger = createLogger({
-  level: 'debug', // Global minimum level
+export const logger = winston.createLogger({
+  // Use environment variable for flexible level control :cite[1]
+  level: process.env.LOG_LEVEL || 'info',
+  handleExceptions: true,
+  handleRejections: true,
   format: combine(
-    timestamp(),
-    errors({ stack: true }),
-    json()
+    timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    errors({ stack: true }), // Log full stack traces
+    json() 
   ),
   transports: [
-    // Console transport - colored and formatted
-    new transports.Console({
+    // Console transport - for development, more readable
+    new winston.transports.Console({
       format: combine(
-        colorize(),
+        colorize(), // Adds colors to levels
         timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
         consoleFormat
       ),
-      level: 'debug' // Show all levels in console
     }),
 
-    // Debug level - everything
-    new transports.File({
-      filename: debugLogPath,
-      level: 'debug', // Captures debug, info, warn, error
-      format: combine(
-        timestamp(),
-        json()
-      )
+    // Daily Rotate File for all logs
+    new DailyRotateFile({
+      filename: path.join(logDir, 'app-%DATE%.log'),
+      datePattern: 'YYYY-MM-DD',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '14d',
+      // No level set, so it logs everything the logger allows
     }),
 
-    // Info level - info and above (info, warn, error)
-    new transports.File({
-      filename: infoLogPath,
-      level: 'info',
-      format: combine(
-        timestamp(),
-        json()
-      )
+    // Daily Rotate File specifically for errors
+    new DailyRotateFile({
+      filename: path.join(logDir, 'error-%DATE%.log'),
+      datePattern: 'YYYY-MM-DD',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '30d',
+      level: 'error', // Only logs 'error' level and above
     }),
-
-    // Warn level - warn and above (warn, error)
-    new transports.File({
-      filename: warnLogPath,
-      level: 'warn',
-      format: combine(
-        timestamp(),
-        json()
-      )
-    }),
-
-    // Error level - only errors
-    new transports.File({
-      filename: errorLogPath,
-      level: 'error',
-      format: combine(
-        timestamp(),
-        errors({ stack: true }),
-        json()
-      )
-    }),
-
-    // Combined - everything from info and above
-    new transports.File({
-      filename: combinedLogPath,
-      level: 'info',
-      format: combine(
-        timestamp(),
-        json()
-      )
-    })
-  ]
+  ],
 });
 
-// Test the logger on startup
-logger.debug('Debug level test - working as expeected');
-logger.info('Info level test - working as expeected');
-logger.warn('Warn level test - working as expeected');
-logger.error('Error level test - working as expeected');
+// Optional: Handle events from the daily rotate file transport :cite[2]
+const dailyRotateTransport = logger.transports.find(transport => transport instanceof DailyRotateFile) as DailyRotateFile;
 
-logger.info(`Log files initialized at: ${path.join(process.cwd(), 'logs')}`);
+if (dailyRotateTransport) {
+  dailyRotateTransport.on('error', (error) => {
+    logger.error('DailyRotateFile transport error:', error);
+  });
+  dailyRotateTransport.on('rotate', (oldFilename, newFilename) => {
+    logger.info(`Log file rotated from ${oldFilename} to ${newFilename}`);
+  });
+}
