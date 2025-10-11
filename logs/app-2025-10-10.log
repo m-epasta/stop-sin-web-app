@@ -8,3 +8,15 @@
 {"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 18:32:06 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10 18:31:06"}
 {"level":"info","message":"Access type: daily","timestamp":"2025-10-10 18:31:06"}
 {"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10 18:31:06","users":50}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-10 20:22:50"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10 20:22:50"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 20:23:50 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10 20:22:50"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-10 20:22:50"}
+{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10 20:22:50","users":50}
+{"accessType":"daily","data":{"activeSessions":127,"date":"2025-10-10","level":"info","message":"Daily user data","timestamp":"2025-10-10 20:22:50","users":50},"level":"info","message":"Authorization successful","rateLimit":{"remaining":9,"resetTime":"2025-10-10T18:23:50.422Z"},"success":true,"timestamp":"2025-10-10 20:22:50"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-10 22:41:46"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-10 22:41:46"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Fri Oct 10 2025 22:42:46 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-10 22:41:46"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-10 22:41:46"}
+{"average":75,"level":"info","message":"Average users per country","timestamp":"2025-10-10 22:41:46","topCountries":[{"country":"United States","users":320},{"country":"Brazil","users":285},{"country":"Philippines","users":198}]}
+{"accessType":"country_avg","data":{"average":75,"level":"info","message":"Average users per country","timestamp":"2025-10-10 22:41:46","topCountries":[{"country":"United States","users":320},{"country":"Brazil","users":285},{"country":"Philippines","users":198}]},"level":"info","message":"Authorization successful","rateLimit":{"remaining":9,"resetTime":"2025-10-10T20:42:46.394Z"},"success":true,"timestamp":"2025-10-10 22:41:46"}

@@ -1,0 +1,36 @@
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-11 12:38:03"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-11 12:38:03"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Sat Oct 11 2025 12:39:03 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-11 12:38:03"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-11 12:38:03"}
+{"average":75,"level":"info","message":"Average users per country","timestamp":"2025-10-11 12:38:03","topCountries":[{"country":"United States","users":320},{"country":"Brazil","users":285},{"country":"Philippines","users":198}]}
+{"accessType":"country_avg","data":{"average":75,"level":"info","message":"Average users per country","timestamp":"2025-10-11 12:38:03","topCountries":[{"country":"United States","users":320},{"country":"Brazil","users":285},{"country":"Philippines","users":198}]},"level":"info","message":"Authorization successful","rateLimit":{"remaining":9,"resetTime":"2025-10-11T10:39:03.860Z"},"success":true,"timestamp":"2025-10-11 12:38:04"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-11 12:46:52"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-11 12:46:52"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Sat Oct 11 2025 12:47:52 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-11 12:46:52"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-11 12:46:52"}
+{"average":75,"level":"info","message":"Average users per country","timestamp":"2025-10-11 12:46:52","topCountries":[{"country":"United States","users":320},{"country":"Brazil","users":285},{"country":"Philippines","users":198}]}
+{"accessType":"country_avg","data":{"average":75,"level":"info","message":"Average users per country","timestamp":"2025-10-11 12:46:52","topCountries":[{"country":"United States","users":320},{"country":"Brazil","users":285},{"country":"Philippines","users":198}]},"level":"info","message":"Authorization successful","rateLimit":{"remaining":9,"resetTime":"2025-10-11T10:47:52.061Z"},"success":true,"timestamp":"2025-10-11 12:46:52"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-11 13:00:44"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-11 13:00:44"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Sat Oct 11 2025 13:01:44 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-11 13:00:44"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-11 13:00:44"}
+{"level":"info","message":"Translation completed","originalKeys":["message","average","topCountries"],"timestamp":"2025-10-11 13:00:45","translatedKeys":["message","average","topCountries"]}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"timestamp":"2025-10-11 13:00:45","translatedKeys":["success","message","accessType","data","rateLimit"]}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-11 13:06:03"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-11 13:06:03"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Sat Oct 11 2025 13:07:03 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-11 13:06:03"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-11 13:06:03"}
+{"level":"info","message":"Translation completed","originalKeys":["message","average","topCountries"],"timestamp":"2025-10-11 13:06:03","translatedKeys":["message","average","topCountries"]}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"timestamp":"2025-10-11 13:06:03","translatedKeys":["success","message","accessType","data","rateLimit"]}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-11 13:06:29"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-11 13:06:29"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Sat Oct 11 2025 13:07:29 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-11 13:06:29"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-11 13:06:29"}
+{"level":"info","message":"Translation completed","originalKeys":["message","average","topCountries"],"timestamp":"2025-10-11 13:06:29","translatedKeys":["message","average","topCountries"]}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"timestamp":"2025-10-11 13:06:29","translatedKeys":["success","message","accessType","data","rateLimit"]}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-11 13:08:37"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-11 13:08:37"}
+{"level":"info","message":"Rate limit status: true, remaining: 9, resetTime: Sat Oct 11 2025 13:09:37 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-11 13:08:37"}
+{"level":"info","message":"Access type: country_avg","timestamp":"2025-10-11 13:08:37"}
+{"level":"info","message":"Translation completed","originalKeys":["message","average","topCountries"],"timestamp":"2025-10-11 13:08:37","translatedKeys":["message","average","topCountries"]}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"timestamp":"2025-10-11 13:08:38","translatedKeys":["success","message","accessType","data","rateLimit"]}

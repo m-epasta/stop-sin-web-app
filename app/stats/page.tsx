@@ -66,7 +66,9 @@ export default function StatsPage() {
                 throw new Error(data.error || `Request failed with status ${response.status}`);
             }
 
-            setApiData(translateData(data, 'en')); // Translate the JSON data to English
+            const cleanData = JSON.parse(JSON.stringify(data));
+            const translatedData: any = await translateData(cleanData, 'en'); 
+            setApiData(translatedData); // Translate the JSON data to English
             
         } catch (error: any) {
             console.error('API Error:', error);

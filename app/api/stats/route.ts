@@ -49,6 +49,7 @@ const dataTemplates = {
   })
 };
 
+
 export async function GET(request: NextRequest) {
   try {
     // Initialize API keys on first request
@@ -137,11 +138,11 @@ async function analyzeAuth(token: string, rateLimitResult: { allowed: boolean; r
     data: data,
     rateLimit: {
       remaining: rateLimitResult.remaining,
-      resetTime: rateLimitResult.resetTime
+      resetTime: rateLimitResult.resetTime.toISOString()
     }
   };
-
-  return NextResponse.json(responseData);
+  const cleanResponse = JSON.parse(JSON.stringify(responseData));
+  return NextResponse.json(cleanResponse);
 }
 
 async function runData(accessType: string) {
@@ -153,7 +154,9 @@ async function runData(accessType: string) {
   }
 
   const jsondata = template();
-  return await translateJSONWrapper(jsondata, 'en');
+  const translatedData = await translateJSONWrapper(jsondata, 'en');
+
+  return JSON.parse(JSON.stringify(translatedData));
 }
 
 function checkRateLimit(signature: string): { allowed: boolean; remaining: number; resetTime: Date } {
