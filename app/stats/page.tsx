@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo, ChangeEvent } from "react";
 import { getUserSignature } from "../lib/getDesktopName";
-import { translateData } from '../actions/translate';
+import { createTranslatedReportAction } from '../actions/translate';
 import "./stats.css";
 
 export default function StatsPage() {
@@ -11,6 +11,7 @@ export default function StatsPage() {
     const [placeholder, setPlaceholder] = useState("Enter your API key");
     const [error, setError] = useState<string | null>(null);
     const [apiData, setApiData] = useState<any>(null);
+    const [sentenceFormat, setSentenceFormat] = useState<string>("");
 
     // Memoized API keys from environment variables
     const VALID_API_KEYS = useMemo(() => [
@@ -27,15 +28,14 @@ export default function StatsPage() {
         } else {
             return { isValid: false, message: "✗ Invalid API key" };
         }
-    }, [apiKey, VALID_API_KEYS]); // Add VALID_API_KEYS to dependencies
+    }, [apiKey, VALID_API_KEYS]);
 
-    // Rest of your component remains the same...
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setApiKey(e.target.value);
         setError(null);
         setApiData(null);
+        setSentenceFormat("");
     };
-
 
     const submitButton = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -49,14 +49,15 @@ export default function StatsPage() {
             setIsLoading(true);
             setError(null);
             setApiData(null);
+            setSentenceFormat("");
             
-            const userSignature = getUserSignature(); // Get the unique signature
+            const userSignature = getUserSignature();
 
             const response = await fetch('/api/stats', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${apiKey.trim()}`,
-                    'X-User-Signature': userSignature // Add signature to headers
+                    'X-User-Signature': userSignature
                 }
             });
 
@@ -66,15 +67,30 @@ export default function StatsPage() {
                 throw new Error(data.error || `Request failed with status ${response.status}`);
             }
 
-            const cleanData = JSON.parse(JSON.stringify(data));
-            const translatedData: any = await translateData(cleanData, 'en'); 
-            setApiData(translatedData); // Translate the JSON data to English
+            console.log('📦 Raw API data:', data);
+            
+            // Store the raw data for display
+            setApiData(data);
+            
+            // Convert to sentence format
+            const sentences = await  createTranslatedReportAction(data, 'en', 'natural');
+            setSentenceFormat(sentences);
             
         } catch (error: any) {
             console.error('API Error:', error);
             setError(error.message);
         } finally {
             setIsLoading(false);
+        }
+    };
+
+    // Safe date parsing function
+    const safeDateParse = (dateString: string) => {
+        try {
+            const date = new Date(dateString);
+            return isNaN(date.getTime()) ? 'Invalid Date' : date.toLocaleString();
+        } catch {
+            return 'Invalid Date';
         }
     };
 
@@ -156,21 +172,34 @@ export default function StatsPage() {
             )}
 
             {/* API Data Display */}
-            {apiData && (
-                <div className="results-section">
-                    <h2 className="section-title">Analytics Results</h2>
-                    <div className="data-display">
-                        <pre>{JSON.stringify(apiData, null, 2)}</pre>
-                        {apiData.rateLimit && (
-                            <div className="rate-limit-info">
-                                <p>Remaining requests: {apiData.rateLimit.remaining}</p>
-                                <p>Reset time: {new Date(apiData.rateLimit.resetTime).toLocaleString()}</p>
-                            </div>
-                        )}
-                    </div>
+{apiData && (
+    <div className="results-section">
+        <h2 className="section-title">Analytics Results</h2>
+        
+        {/* Sentence Format Display */}
+        {sentenceFormat && (
+            <div className="sentence-display">
+                <h3>Human Readable Format:</h3>
+                <pre className="sentence-pre">{sentenceFormat}</pre>
+            </div>
+        )}
+
+        {/* Raw JSON Display */}
+        <div className="data-display">
+            <h3>Raw Data:</h3>
+            <pre>{JSON.stringify(apiData, null, 2)}</pre>
+            {apiData.rateLimit && (
+                <div className="rate-limit-info">
+                    <p>Remaining requests: {apiData.rateLimit.remaining}</p>
+                    <p>Reset time: {safeDateParse(apiData.rateLimit.resetTime)}</p>
+                    <button className="info-button">
+                        📚 Learn about raw data and database structure
+                    </button>
                 </div>
             )}
         </div>
+    </div>
+)}
+        </div>
     );
 };
-

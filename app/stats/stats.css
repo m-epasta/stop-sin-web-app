@@ -469,3 +469,73 @@ header::before {
         font-size: 1.3rem;
     }
 }
+
+.sentence-display {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007acc;
+}
+
+.sentence-display h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.sentence-pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #e1e5e9;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+}
+
+.data-display {
+    margin-top: 1rem;
+}
+
+.data-display h3 {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-button {
+    background: #007acc;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.info-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.info-button:hover::before {
+    left: 100%;
+}
+
+.info-button:hover {
+    background: #005a9e;
+    transform: translateY(-1px);
+}

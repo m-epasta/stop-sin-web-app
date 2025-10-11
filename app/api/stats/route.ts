@@ -156,7 +156,7 @@ async function runData(accessType: string) {
   const jsondata = template();
   const translatedData = await translateJSONWrapper(jsondata, 'en');
 
-  return JSON.parse(JSON.stringify(translatedData));
+  return translatedData;
 }
 
 function checkRateLimit(signature: string): { allowed: boolean; remaining: number; resetTime: Date } {
