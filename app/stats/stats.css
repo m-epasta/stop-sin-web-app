@@ -1235,3 +1235,50 @@ body {
     padding: var(--space-xl);
   }
 }
+
+/* Rate Limit Error Styling */
+.rate-limit-error {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-left: 4px solid #f59e0b;
+}
+
+.rate-limit-error .error-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.rate-limit-error .error-content {
+    flex: 1;
+}
+
+.rate-limit-error .error-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #92400e;
+    margin-bottom: 0.5rem;
+}
+
+.rate-limit-error .error-content p {
+    color: #92400e;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Update button states for rate limit */
+.theme-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.theme-button:disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}

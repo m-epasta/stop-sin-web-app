@@ -150,3 +150,258 @@
 {"level":"info","message":"Access type: daily","timestamp":"2025-10-12 17:57:05"}
 {"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 17:57:05"}
 {"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 17:57:06"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 17:58:33"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 17:58:33"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 17:58:33"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 17:59:33 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 17:58:33"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 17:58:33"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 17:58:33"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 17:58:34"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:05:42"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:05:42"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:05:42"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:06:42 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:05:42"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:05:42"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:05:42"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:05:43"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:07:55"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:07:55"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:07:55"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:08:55 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:07:55"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:07:55"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:07:55"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:07:56"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:08:21"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:08:21"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:08:21"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:09:21 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:08:21"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:08:21"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:08:21"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:08:22"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:08:51"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:08:51"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:08:51"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:09:51 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:08:51"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:08:51"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:08:51"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:08:52"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:12:50"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:12:50"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:12:50"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:13:50 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:12:50"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-12 18:12:50"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","growth","period"],"targetLanguage":"en","timestamp":"2025-10-12 18:12:50"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:12:51"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:13:10"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:13:10"}
+{"level":"info","message":"Rate limit status: true, remaining: 98, resetTime: Sun Oct 12 2025 18:14:10 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:13:10"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-12 18:13:10"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","growth","period"],"targetLanguage":"en","timestamp":"2025-10-12 18:13:11"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:13:13"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:13:16"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:13:16"}
+{"level":"info","message":"Rate limit status: true, remaining: 97, resetTime: Sun Oct 12 2025 18:14:16 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:13:16"}
+{"level":"info","message":"Access type: monthly","timestamp":"2025-10-12 18:13:16"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","growth","period"],"targetLanguage":"en","timestamp":"2025-10-12 18:13:16"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:13:17"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:20:06"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:06"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:06"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:21:06 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:06"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:06"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:06"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:07"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:17"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:17"}
+{"level":"info","message":"Rate limit status: true, remaining: 98, resetTime: Sun Oct 12 2025 18:21:17 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:17"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:17"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:17"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:18"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:23"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:23"}
+{"level":"info","message":"Rate limit status: true, remaining: 97, resetTime: Sun Oct 12 2025 18:21:23 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:23"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:23"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:23"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:24"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:25"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:25"}
+{"level":"info","message":"Rate limit status: true, remaining: 96, resetTime: Sun Oct 12 2025 18:21:25 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:25"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:25"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:25"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:25"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:26"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:26"}
+{"level":"info","message":"Rate limit status: true, remaining: 95, resetTime: Sun Oct 12 2025 18:21:26 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:26"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:26"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:26"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:26"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:27"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Rate limit status: true, remaining: 94, resetTime: Sun Oct 12 2025 18:21:27 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:27"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Rate limit status: true, remaining: 93, resetTime: Sun Oct 12 2025 18:21:27 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:27"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:28"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:28"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:28"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:28"}
+{"level":"info","message":"Rate limit status: true, remaining: 92, resetTime: Sun Oct 12 2025 18:21:28 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:28"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:28"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:28"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:29"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:29"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:29"}
+{"level":"info","message":"Rate limit status: true, remaining: 91, resetTime: Sun Oct 12 2025 18:21:29 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:29"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:29"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:29"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:30"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:30"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:30"}
+{"level":"info","message":"Rate limit status: true, remaining: 90, resetTime: Sun Oct 12 2025 18:21:30 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:30"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:30"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:30"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:31"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:31"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:31"}
+{"level":"info","message":"Rate limit status: true, remaining: 89, resetTime: Sun Oct 12 2025 18:21:31 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:31"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:31"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:32"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:32"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:33"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:33"}
+{"level":"info","message":"Rate limit status: true, remaining: 88, resetTime: Sun Oct 12 2025 18:21:33 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:33"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:33"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:33"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:34"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:20:38"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:20:38"}
+{"level":"info","message":"Rate limit status: true, remaining: 87, resetTime: Sun Oct 12 2025 18:21:38 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:20:38"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:20:38"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:38"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:20:39"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:23:54"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:23:54"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:23:54"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:24:54 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:23:54"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:23:54"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:23:55"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:23:55"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:23:59"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:23:59"}
+{"level":"info","message":"Rate limit status: true, remaining: 98, resetTime: Sun Oct 12 2025 18:24:59 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:23:59"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:23:59"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:23:59"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:00"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:01"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:01"}
+{"level":"info","message":"Rate limit status: true, remaining: 97, resetTime: Sun Oct 12 2025 18:25:01 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:01"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:01"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:01"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:02"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:04"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:04"}
+{"level":"info","message":"Rate limit status: true, remaining: 96, resetTime: Sun Oct 12 2025 18:25:04 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:04"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:04"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:04"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:04"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:05"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:05"}
+{"level":"info","message":"Rate limit status: true, remaining: 95, resetTime: Sun Oct 12 2025 18:25:05 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:05"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:05"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:05"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:06"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:08"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:08"}
+{"level":"info","message":"Rate limit status: true, remaining: 94, resetTime: Sun Oct 12 2025 18:25:08 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:08"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:08"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:08"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:09"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:09"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:09"}
+{"level":"info","message":"Rate limit status: true, remaining: 93, resetTime: Sun Oct 12 2025 18:25:09 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:09"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:09"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:10"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:10"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:11"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:11"}
+{"level":"info","message":"Rate limit status: true, remaining: 92, resetTime: Sun Oct 12 2025 18:25:11 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:11"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:11"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:11"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:11"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:12"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:12"}
+{"level":"info","message":"Rate limit status: true, remaining: 91, resetTime: Sun Oct 12 2025 18:25:12 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:12"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:12"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:12"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:13"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:24:14"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:24:14"}
+{"level":"info","message":"Rate limit status: true, remaining: 90, resetTime: Sun Oct 12 2025 18:25:14 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:24:14"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:24:14"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:14"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:24:14"}
+{"level":"info","message":"[3/3] retrieved: All API keys loaded successfully","timestamp":"2025-10-12 18:32:02"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:02"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:02"}
+{"level":"info","message":"Rate limit status: true, remaining: 99, resetTime: Sun Oct 12 2025 18:33:02 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:02"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:02"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:02"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:03"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:08"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:08"}
+{"level":"info","message":"Rate limit status: true, remaining: 98, resetTime: Sun Oct 12 2025 18:33:08 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:08"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:08"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:08"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:09"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:09"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:09"}
+{"level":"info","message":"Rate limit status: true, remaining: 97, resetTime: Sun Oct 12 2025 18:33:09 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:09"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:09"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:09"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:10"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:10"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:10"}
+{"level":"info","message":"Rate limit status: true, remaining: 96, resetTime: Sun Oct 12 2025 18:33:10 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:10"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:10"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:10"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:11"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:12"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:12"}
+{"level":"info","message":"Rate limit status: true, remaining: 95, resetTime: Sun Oct 12 2025 18:33:12 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:12"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:12"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:12"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:13"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:13"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:13"}
+{"level":"info","message":"Rate limit status: true, remaining: 94, resetTime: Sun Oct 12 2025 18:33:13 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:13"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:13"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:13"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:14"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:14"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:14"}
+{"level":"info","message":"Rate limit status: true, remaining: 93, resetTime: Sun Oct 12 2025 18:33:14 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:14"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:14"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:14"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:16"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:16"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:16"}
+{"level":"info","message":"Rate limit status: true, remaining: 92, resetTime: Sun Oct 12 2025 18:33:16 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:16"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:16"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:16"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:17"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:17"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:17"}
+{"level":"info","message":"Rate limit status: true, remaining: 91, resetTime: Sun Oct 12 2025 18:33:17 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:17"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:17"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:17"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:18"}
+{"level":"info","message":"Authorization: true, User Signature: true","timestamp":"2025-10-12 18:32:18"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 18:32:18"}
+{"level":"info","message":"Rate limit status: true, remaining: 90, resetTime: Sun Oct 12 2025 18:33:18 GMT+0200 (heure d’été d’Europe centrale)","timestamp":"2025-10-12 18:32:18"}
+{"level":"info","message":"Access type: daily","timestamp":"2025-10-12 18:32:18"}
+{"level":"info","message":"Translation completed","originalKeys":["message","users","activeSessions","date"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:19"}
+{"level":"info","message":"Translation completed","originalKeys":["success","message","accessType","data","rateLimit"],"targetLanguage":"en","timestamp":"2025-10-12 18:32:20"}

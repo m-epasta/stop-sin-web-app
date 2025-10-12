@@ -12,6 +12,7 @@ export default function StatsPage() {
     const [error, setError] = useState<string | null>(null);
     const [apiData, setApiData] = useState<any>(null);
     const [sentenceFormat, setSentenceFormat] = useState<string>("");
+    const [rateLimitError, setRateLimitError] = useState<string | null>(null); // NEW: Separate state for rate limit errors
 
     // Memoized API keys from environment variables
     const VALID_API_KEYS = useMemo(() => [
@@ -33,6 +34,7 @@ export default function StatsPage() {
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setApiKey(e.target.value);
         setError(null);
+        setRateLimitError(null); // Clear rate limit errors too
         setApiData(null);
         setSentenceFormat("");
     };
@@ -41,14 +43,34 @@ export default function StatsPage() {
         e.preventDefault();
 
         if (!apiKey.trim() || validation.isValid !== true) {
-            alert("Please enter and validate your API key first.");
+            setError("Please enter and validate your API key first.");
             return;
+        }
+
+        // Enhanced rate limit checking
+        if (apiData?.rateLimit) {
+            if (apiData.rateLimit.remaining === 0) {
+                const resetTime = new Date(apiData.rateLimit.resetTime);
+                const now = new Date();
+                const timeUntilReset = resetTime.getTime() - now.getTime();
+                
+                if (timeUntilReset > 0) {
+                    // Calculate minutes until reset
+                    const minutesUntilReset = Math.ceil(timeUntilReset / (1000 * 60));
+                    setRateLimitError(`Rate limit exceeded! Please try again in ${minutesUntilReset} minute${minutesUntilReset !== 1 ? 's' : ''}.`);
+                    return;
+                } else {
+                    // Reset time has passed, reset the rate limit
+                    console.log('Rate limit reset time has passed, resetting counter...');
+                    setRateLimitError(null); // Clear any existing rate limit error
+                }
+            }
         }
 
         try {
             setIsLoading(true);
             setError(null);
-            setApiData(null);
+            setRateLimitError(null); // Clear rate limit error when making new request
             setSentenceFormat("");
             
             const userSignature = getUserSignature();
@@ -61,6 +83,20 @@ export default function StatsPage() {
                 }
             });
 
+            // Check if we got a 429 Too Many Requests response
+            if (response.status === 429) {
+                const resetTime = response.headers.get('X-RateLimit-Reset');
+                let message = 'Rate limit exceeded from server. Please try again later.';
+                
+                if (resetTime) {
+                    const resetDate = new Date(resetTime);
+                    const minutesUntilReset = Math.ceil((resetDate.getTime() - Date.now()) / (1000 * 60));
+                    message = `Rate limit exceeded! Please try again in ${minutesUntilReset} minute${minutesUntilReset !== 1 ? 's' : ''}.`;
+                }
+                
+                throw new Error(message);
+            }
+
             const data = await response.json();
 
             if (!response.ok) {
@@ -68,6 +104,28 @@ export default function StatsPage() {
             }
 
             console.log('📦 Raw API data:', data);
+            
+            // Get current rate limit from existing apiData or calculate new one
+            const currentLimit = Math.max(1, data.rateLimit?.limit ?? 10);
+            let newRemaining;
+            
+            if (apiData?.rateLimit) {
+                // Check if reset time has passed
+                const resetTime = new Date(apiData.rateLimit.resetTime);
+                const now = new Date();
+                
+                if (now >= resetTime) {
+                    // Reset time has passed, reset the counter
+                    newRemaining = currentLimit - 1;
+                } else {
+                    // Decrement from previous rate limit
+                    newRemaining = Math.max(0, apiData.rateLimit.remaining - 1);
+                }
+            } else {
+                // First request - use API value but fix if illogical
+                const apiRemaining = Math.max(0, data.rateLimit?.remaining ?? 9);
+                newRemaining = apiRemaining <= currentLimit ? apiRemaining : Math.max(0, currentLimit - 1);
+            }
             
             // Enhanced data sanitization with proper fallbacks
             const sanitizedData = {
@@ -87,11 +145,11 @@ export default function StatsPage() {
                         users: country.users ?? 0
                     }))
                 },
-                // Sanitize rateLimit to prevent NaN and display issues
+                // Use responsive rate limit that decreases with each call
                 rateLimit: {
-                    remaining: Math.max(0, data.rateLimit?.remaining ?? 9),
-                    limit: Math.max(1, data.rateLimit?.limit ?? 10), // Ensure at least 1
-                    resetTime: data.rateLimit?.resetTime ?? new Date(Date.now() + 3600000).toISOString() // 1 hour from now
+                    remaining: newRemaining,
+                    limit: currentLimit,
+                    resetTime: data.rateLimit?.resetTime ?? new Date(Date.now() + 3600000).toISOString()
                 },
                 // Sanitize other common fields
                 success: data.success ?? true,
@@ -110,28 +168,34 @@ export default function StatsPage() {
             
         } catch (error: any) {
             console.error('API Error:', error);
-            setError(error.message);
             
-            // Set fallback data on error for better UX
-            const fallbackData = {
-                success: false,
-                message: 'Using cached or fallback data',
-                data: {
-                    users: 0,
-                    average: 0,
-                    activeSessions: 0,
-                    growth: '0%',
-                    period: 'Fallback Data',
-                    date: new Date().toISOString().split('T')[0],
-                    topCountries: []
-                },
-                rateLimit: {
-                    remaining: 0,
-                    limit: 1000,
-                    resetTime: new Date().toISOString()
-                }
-            };
-            setApiData(fallbackData);
+            // Handle rate limit errors separately
+            if (error.message.includes('Rate limit')) {
+                setRateLimitError(error.message);
+            } else {
+                setError(error.message);
+                
+                // Don't set fallback data on rate limit errors - keep showing current data
+                const fallbackData = {
+                    success: false,
+                    message: 'Using cached or fallback data',
+                    data: {
+                        users: 0,
+                        average: 0,
+                        activeSessions: 0,
+                        growth: '0%',
+                        period: 'Fallback Data',
+                        date: new Date().toISOString().split('T')[0],
+                        topCountries: []
+                    },
+                    rateLimit: {
+                        remaining: 0,
+                        limit: 10,
+                        resetTime: new Date().toISOString()
+                    }
+                };
+                setApiData(fallbackData);
+            }
         } finally {
             setIsLoading(false);
         }
@@ -347,12 +411,17 @@ export default function StatsPage() {
             <button 
                 className={`theme-button primary ${isLoading ? 'loading' : ''}`}
                 onClick={submitButton}
-                disabled={isLoading || validation.isValid !== true}
+                disabled={isLoading || validation.isValid !== true || rateLimitError !== null}
             >
                 {isLoading ? (
                 <>
                     <span className="btn-spinner"></span>
                     Analyzing Data...
+                </>
+                ) : rateLimitError ? (
+                <>
+                    <span className="btn-icon">⏳</span>
+                    Rate Limit Exceeded
                 </>
                 ) : (
                 <>
@@ -370,6 +439,36 @@ export default function StatsPage() {
             )}
         </div>
         </section>
+
+        {/* Rate Limit Error Display */}
+        {rateLimitError && (
+            <div className="rate-limit-error theme-card">
+                <div className="error-icon">⏳</div>
+                <div className="error-content">
+                    <h3>Rate Limit Exceeded</h3>
+                    <p>{rateLimitError}</p>
+                </div>
+                <button className="theme-button secondary" onClick={() => setRateLimitError(null)}>
+                    <span>🔄</span>
+                    Try Again Later
+                </button>
+            </div>
+        )}
+
+        {/* Enhanced Error State */}
+        {error && (
+        <div className="error-state theme-card">
+            <div className="error-icon">⚠️</div>
+            <div className="error-content">
+            <h3>Unable to Load Analytics</h3>
+            <p>{error}</p>
+            </div>
+            <button className="theme-button secondary" onClick={() => setError(null)}>
+            <span>🔄</span>
+            Try Again
+            </button>
+        </div>
+        )}
 
     {/* Enhanced Data Visualization */}
     {apiData && (
@@ -655,21 +754,6 @@ export default function StatsPage() {
         </div>
     </section>
     )}
-
-        {/* Enhanced Error State */}
-        {error && (
-        <div className="error-state theme-card">
-            <div className="error-icon">⚠️</div>
-            <div className="error-content">
-            <h3>Unable to Load Analytics</h3>
-            <p>{error}</p>
-            </div>
-            <button className="theme-button secondary" onClick={() => setError(null)}>
-            <span>🔄</span>
-            Try Again
-            </button>
-        </div>
-        )}
 
         {/* Footer */}
         <footer className="theme-footer">
