@@ -42,7 +42,7 @@ message sent by the API: pasted into logs
       logger.error('Missing authorization header');
       return NextResponse.json(
         { error: "Authorization header required" },
-        { status: 401 }
+        { status: 401 } 
       )
 ```
  - here we can see that the console status: (logger.error with error as the level) indicates the error that the API sent in response to the request

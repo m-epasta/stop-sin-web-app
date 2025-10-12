@@ -1,0 +1,5 @@
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 17:43:07"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 17:55:42"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 17:56:27"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 17:56:50"}
+{"level":"error","message":"RATE_LIMIT not set, using default limit of 100 requests per minute","timestamp":"2025-10-12 17:57:05"}

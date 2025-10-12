@@ -10,6 +10,7 @@ export const SIGNATURE_KEY = 'user_signature';
 export const getUserSignature = (): string => {
     if (typeof window === 'undefined' || !window.localStorage) {
         return 'server-side-render';
+        // define a key later and dont forget to commit into git
     }
 
     let signature = localStorage.getItem(SIGNATURE_KEY);

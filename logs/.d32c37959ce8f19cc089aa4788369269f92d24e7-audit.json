@@ -14,6 +14,11 @@
             "date": 1760179083820,
             "name": "/home/m-epasta/StopSinDir/stop-sin-web-app/logs/app-2025-10-11.log",
             "hash": "b5ecc4de3fc8edffa4acc2bfff08e9c5bb49f5241302bd33ba80905b7ff6b2ae"
+        },
+        {
+            "date": 1760281067734,
+            "name": "/home/m-epasta/StopSinDir/stop-sin-web-app/logs/app-2025-10-12.log",
+            "hash": "66484b47345f1492bec8fbe3ff8f8a583d7af1ca17565494be97db2730782460"
         }
     ],
     "hashType": "sha256"
